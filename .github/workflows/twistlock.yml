@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  twistlock_scan:
+    runs-on: ubuntu-latest
+    name: Build and scan
+    steps:
+      - uses: actions/checkout@v2
+
+      # Build the image we're going to scan.
+      - run: docker build -t myapp:test ./test
+
+      # Run the Twistlock action.
+      - uses: dequelabs/action-twistlock@initial-implementation # TODO: change to "main" once this PR lands.
+        with:
+          tl-username: ${{ secrets.TWISTLOCK_USERNAME }}
+          tl-password: ${{ secrets.TWISTLOCK_PASSWORD }}
+          tl-console-url: https://harbor.dequelabs.com
+          docker-image: myapp:test
