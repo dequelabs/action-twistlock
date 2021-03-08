@@ -11,7 +11,7 @@ jobs:
       - run: docker build -t myapp:test ./test
 
       # Run the Twistlock action.
-      - uses: dequelabs/action-twistlock@initial-implementation # TODO: change to "main" once this PR lands.
+      - uses: dequelabs/action-twistlock@main
         with:
           tl-username: ${{ secrets.TWISTLOCK_USERNAME }}
           tl-password: ${{ secrets.TWISTLOCK_PASSWORD }}
