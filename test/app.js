@@ -9,7 +9,6 @@ const HTML_PAGE = `
   </head>
   <body>
     <h1>action-twistlock example</h1>
-    <p></p>
   </body>
 </html>
 `;
