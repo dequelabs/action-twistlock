@@ -35,6 +35,7 @@ runs:
         ./twistcli images scan \
           --ci \
           --details \
-          -address "${{ inputs.tl-console-url }}" \
+          --address "${{ inputs.tl-console-url }}" \
           --token "${{ inputs.tl-token }}" \
+          --containerized \
           "${{ inputs.docker-image }}"
