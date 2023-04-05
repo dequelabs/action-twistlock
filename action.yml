@@ -2,11 +2,8 @@ name: Twistlock
 description: Run Twistlock
 
 inputs:
-  tl-username:
-    description: The username
-    required: true
-  tl-password:
-    description: The password
+  tl-token:
+    description: The API token
     required: true
   tl-console-url:
     description: The console URL (eg https://console.your-company.org:8083)
@@ -27,7 +24,7 @@ runs:
       run: |
         curl \
           --insecure \
-          --user "${{ inputs.tl-username }}:${{ inputs.tl-password }}" \
+          --token "${{ inputs.tl-token }}" \
           --output ./twistcli \
           "${{ inputs.tl-console-url }}/api/${{ inputs.tl-cli-version }}/util/twistcli"
         chmod a+x ./twistcli

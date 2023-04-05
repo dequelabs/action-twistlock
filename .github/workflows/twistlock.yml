@@ -11,9 +11,8 @@ jobs:
       - run: docker build -t myapp:test ./test
 
       # Run the Twistlock action.
-      - uses: dequelabs/action-twistlock@main
+      - uses: dequelabs/action-twistlock@use-api-token
         with:
-          tl-username: ${{ secrets.TWISTLOCK_USERNAME }}
-          tl-password: ${{ secrets.TWISTLOCK_PASSWORD }}
-          tl-console-url: https://harbor.dequelabs.com
+          tl-token: ${{ secrets.TWISTLOCK_TOKEN }}
+          tl-console-url: https://us-west1.cloud.twistlock.com/us-4-161056371
           docker-image: myapp:test
