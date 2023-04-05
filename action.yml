@@ -37,6 +37,4 @@ runs:
           --details \
           -address "${{ inputs.tl-console-url }}" \
           --token "${{ inputs.tl-token }}" \
-          -u "${{ inputs.tl-username }}" \
-          -p "${{ inputs.tl-password }}" \
           "${{ inputs.docker-image }}"
