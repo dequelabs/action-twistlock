@@ -1,5 +1,5 @@
 name: Twistlock
-description: Temporarily a no-op while a replacement for Twistlock is set up. Inputs are kept for interface compatibility but unused.
+description: Temporarily a no-op while a replacement for Prisma Cloud is set up. Inputs are kept for interface compatibility but unused.
 
 inputs:
   tl-username:
@@ -24,4 +24,4 @@ runs:
   steps:
     - name: Skip Twistlock scan
       shell: bash
-      run: echo "action-twistlock is temporarily a no-op while a replacement for Twistlock is set up."
+      run: echo "action-twistlock is temporarily a no-op while a replacement for Prisma Cloud is set up."
