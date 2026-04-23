@@ -1,5 +1,7 @@
 # action-twistlock
 
+> **Note:** This action is temporarily a no-op while a replacement for Twistlock is set up. Inputs are kept for interface compatibility but are currently unused. Existing callers will continue to work without changes.
+
 > A GitHub action for scanning a Docker image with the [Twistlock `twistcli` tool](https://docs.paloaltonetworks.com/prisma/prisma-cloud/19-11/prisma-cloud-compute-edition-admin/tools/twistcli.html).
 
 ## Example Usage

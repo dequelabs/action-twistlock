@@ -1,5 +1,5 @@
 name: Twistlock
-description: Run Twistlock
+description: Temporarily a no-op while a replacement for Twistlock is set up. Inputs are kept for interface compatibility but unused.
 
 inputs:
   tl-username:
@@ -22,23 +22,6 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Download CLI from Twistlock console
+    - name: Skip Twistlock scan
       shell: bash
-      run: |
-        curl \
-          --insecure \
-          --user "${{ inputs.tl-username }}:${{ inputs.tl-password }}" \
-          --output ./twistcli \
-          "${{ inputs.tl-console-url }}/api/${{ inputs.tl-cli-version }}/util/twistcli"
-        chmod a+x ./twistcli
-
-    - name: Scan the image using the Twistlock CLI
-      shell: bash
-      run: |
-        ./twistcli images scan \
-          --ci \
-          --details \
-          -address "${{ inputs.tl-console-url }}" \
-          -u "${{ inputs.tl-username }}" \
-          -p "${{ inputs.tl-password }}" \
-          "${{ inputs.docker-image }}"
+      run: echo "action-twistlock is temporarily a no-op while a replacement for Twistlock is set up."
